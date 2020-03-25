@@ -12,7 +12,7 @@ import scala.util.Random
 class VideoGameFullTest extends Simulation {
 
   val httpConf = http
-    .baseUrl("http://video-game-db.eu-west-2.elasticbeanstalk.com/app/")
+    .baseUrl("http://localhost:8080/app/")
     .header("Accept", "application/json")
 
   /*** Variables ***/
@@ -22,7 +22,7 @@ class VideoGameFullTest extends Simulation {
   def testDuration: Int = getProperty("DURATION", "60").toInt
 
   // other variables
-  var idNumbers = (20 to 1000).iterator
+  var idNumbers = (200 to 1000).iterator
   val rnd = new Random()
   val now = LocalDate.now()
   val pattern = DateTimeFormatter.ofPattern("yyyy-MM-dd")
